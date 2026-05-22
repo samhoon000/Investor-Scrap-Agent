@@ -61,7 +61,8 @@ def process_yc() -> tuple[list[dict], dict[str, int]]:
         res = validate_founder_angel(name, founder_profile_text)
         
         # Log scores before filtering/acceptance
-        logger.info("[YC] founder_score=%d investor_score=%d", res["founder_score"], res["investor_score"])
+        logger.info("[VALIDATION] founder_score=%d", res["founder_score"])
+        logger.info("[VALIDATION] investor_score=%d", res["investor_score"])
 
         if not res["valid"]:
             stats["filtered"] += 1
